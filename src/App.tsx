@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CrestArsenal from "./CrestArsenal";
 import CrestArsenalV2 from "./CrestArsenalV2";
 import CrestArsenalV3 from "./CrestArsenalV3";
+import CrestArsenalV4 from "./CrestArsenalV4";
 
 const StateToggle: React.FunctionComponent<{
   state: any;
@@ -30,6 +31,7 @@ function App() {
     show2: false,
     show3: false,
     show4: false,
+    show5: false,
   });
   return (
     <div className="App">
@@ -98,6 +100,22 @@ function App() {
           />
           {showState.show4 && (
             <CrestArsenalV3 height={"1em"} width={"100%"} fontSize={30} />
+          )}
+        </li>
+        <li>
+          <StateToggle
+            state={showState}
+            setState={setState}
+            field={"show5"}
+            label={"https://styled-components.com/docs/api#transient-props"}
+          />
+          {showState.show5 && (
+            <CrestArsenalV4
+              height={"1em"}
+              width={"100%"}
+              $fontSize={30}
+              $verticalAlign={"middle"}
+            />
           )}
         </li>
       </ul>
