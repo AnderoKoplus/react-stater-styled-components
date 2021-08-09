@@ -3,6 +3,7 @@ import CrestArsenal from "./CrestArsenal";
 import CrestArsenalV2 from "./CrestArsenalV2";
 import CrestArsenalV3 from "./CrestArsenalV3";
 import CrestArsenalV4 from "./CrestArsenalV4";
+import CrestArsenalV5 from './CrestArsenalV5';
 
 const StateToggle: React.FunctionComponent<{
   state: any;
@@ -32,6 +33,7 @@ function App() {
     show3: false,
     show4: false,
     show5: false,
+    show6: false,
   });
   return (
     <div className="App">
@@ -116,6 +118,17 @@ function App() {
               $fontSize={30}
               $verticalAlign={"middle"}
             />
+          )}
+        </li>
+        <li>
+          <StateToggle
+            state={showState}
+            setState={setState}
+            field={"show6"}
+            label={"cleaner version"}
+          />
+          {showState.show6 && (
+            <CrestArsenalV5/>
           )}
         </li>
       </ul>
